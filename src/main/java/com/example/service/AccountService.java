@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.example.entity.*;
 import com.example.repository.*;
 
+import java.util.Optional;
+
 @Service
 public class AccountService {
   @Autowired
@@ -19,5 +21,9 @@ public class AccountService {
 
   public Account getAccountByUsernameAndPassword(String username, String password) {
     return accountRepository.findByUsernameAndPassword(username, password);
+  }
+
+  public Optional<Account> getAccountById(Integer id) {
+    return accountRepository.findById(id);
   }
 }
