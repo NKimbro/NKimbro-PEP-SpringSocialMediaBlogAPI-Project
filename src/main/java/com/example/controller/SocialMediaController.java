@@ -20,8 +20,8 @@ public class SocialMediaController {
   @Autowired
   AccountService accountService;
   
-  @Autowired
-  MessageService messageService;
+  // @Autowired
+  // MessageService messageService;
 
   @PostMapping("/register")
   public ResponseEntity<Account> createAccount(@RequestBody Account account) {
