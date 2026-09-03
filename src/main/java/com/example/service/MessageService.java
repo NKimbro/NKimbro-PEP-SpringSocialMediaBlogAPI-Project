@@ -32,9 +32,10 @@ public class MessageService {
 
   public Integer deleteMessageById(Integer id) {
     Optional<Message> attempt = messageRepository.findById(id);
-    messageRepository.deleteById(id);
-    if(attempt.isPresent())
+    if(attempt.isPresent()) {
+      messageRepository.deleteById(id);
       return 1;
+    }
     return null;
   }
 

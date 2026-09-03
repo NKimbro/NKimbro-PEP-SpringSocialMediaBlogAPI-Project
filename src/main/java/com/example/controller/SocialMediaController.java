@@ -81,7 +81,7 @@ public class SocialMediaController {
 
   @PatchMapping("/messages/{id}")
   public ResponseEntity<Integer> updateMessageById(@PathVariable Integer id, @RequestBody String newMessage) {
-    if (newMessage.equals("") || newMessage.length() > 254 || messageService.updateMessageById(id, newMessage) == null)
+    if (newMessage.length() < 1 || newMessage.length() > 254 || messageService.updateMessageById(id, newMessage) == null)
       return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                             .body(null);
 
