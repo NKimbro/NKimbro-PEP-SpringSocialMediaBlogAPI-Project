@@ -2,5 +2,5 @@ package com.example.repository;
 import com.example.entity.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MessageRepository extends JpaRepository<Message, Long> {
+public interface MessageRepository extends JpaRepository<Message, Integer> {
 }
